@@ -6,7 +6,7 @@ var argv = require('optimist')
     .describe('i', 'The image from Paper')
     .argv;
 
-var Papersaver = require('./paper-save'),
+var Papersaver = require('./papersaver'),
     paperSaver = new Papersaver();
 
 paperSaver.save(argv.image);
