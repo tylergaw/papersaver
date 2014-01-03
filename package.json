@@ -11,6 +11,7 @@
     "underscore": "~1.5.2"
   },
   "dependencies": {
-    "optimist": "~0.6.0"
+    "optimist": "~0.6.0",
+    "mail-listener2": "~0.1.0"
   }
 }
