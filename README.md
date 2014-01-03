@@ -19,3 +19,4 @@ of all the images.
 
  - Learned how to use [Wintersmith](https://github.com/jnordberg/wintersmith) to generate static sites.
  - Learned the basics of [Grunt](http://gruntjs.com/).
+ - Leanred how to use npm's `--save` and ``--save-dev` to keep `package.json` tidy.

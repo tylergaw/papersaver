@@ -9,5 +9,8 @@
     "wintersmith-nunjucks": "~0.3.0",
     "grunt": "~0.4.2",
     "underscore": "~1.5.2"
+  },
+  "dependencies": {
+    "optimist": "~0.6.0"
   }
 }
