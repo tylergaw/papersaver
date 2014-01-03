@@ -1,0 +1,12 @@
+{
+  "name": "papersaver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylergaw/papersaver.git"
+  },
+  "devDependencies": {
+    "grunt-wintersmith": "0.0.2",
+    "wintersmith-nunjucks": "~0.3.0",
+    "grunt": "~0.4.2"
+  }
+}
