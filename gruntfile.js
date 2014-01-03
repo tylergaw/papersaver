@@ -3,6 +3,7 @@ module.exports = function (grunt) {
         wintersmith: {
             preview: {
                 options: {
+                    action: 'preview',
                     config: './config-preview.json'
                 }
             }

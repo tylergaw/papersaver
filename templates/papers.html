@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<ul class="papers">
+{% set papers = env.helpers.getSortedContentFolder("papers", contents) %}
+
+{% for paper in papers %}
+    <li class="paper">
+        <a href="{{ paper.url }}">
+            <img src="{{ paper.url }}{{ paper.metadata.image_path }}" alt="">
+            <h3>{{ paper.date }}</h3>
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
