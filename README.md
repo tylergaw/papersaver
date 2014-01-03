@@ -13,7 +13,7 @@ of all the images.
  - [Wintersmith](https://github.com/jnordberg/wintersmith) - Static site generator in Node
    - http://davidtucker.net/articles/introduction-to-wintersmith
  - [nvm](https://github.com/creationix/nvm) - To pretend I actually know or have the version of Node I need
-
+ - [Mail-listener2](https://github.com/chirag04/mail-listener2) - Great little package for getting mail through IMAP
 
 ### What did I learn?
 
