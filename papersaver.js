@@ -3,7 +3,8 @@ var config = require('./config.json'),
     fs = require('fs'),
     path = require('path'),
     exec = require('child_process').exec,
-    metaDataTmpl = './templates/paper-metadata.txt';
+    metaDataTmpl = './templates/paper-metadata.txt',
+    papersDir = './contents/papers/';
 
 module.exports = Papersaver();
 
@@ -29,7 +30,7 @@ function Papersaver () {
                 d = new Date(),
                 timestamp = d.getTime(),
                 imageName = config.imgSlug + '-paper-' + timestamp + ext,
-                dir = './contents/papers/' + timestamp + '/';
+                dir = papersDir + timestamp + '/';
 
             fs.mkdir(dir, function () {
                 fs.writeFileSync(dir + imageName, data);
@@ -41,7 +42,9 @@ function Papersaver () {
                     });
 
                     fs.writeFileSync(dir + 'index.md', metaData);
+
                     buildStatic();
+                    updateGitRepo();
                 });
             });
         });
@@ -50,6 +53,8 @@ function Papersaver () {
     return this;
 }
 
+// Build the site using Wintersmith. This can happen before or after git update
+// because we gitignore the built site.
 function buildStatic () {
     exec('wintersmith build -X', function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
@@ -57,5 +62,14 @@ function buildStatic () {
         if (error !== null) {
             console.log('exec error: ' + error);
         }
+    });
+}
+
+// Add the new papers to the repo and then push the changes.
+function updateGitRepo () {
+    var cmd = 'git add ' + papersDir + '&& git commit -m "Adding papers" && git push';
+
+    exec(cmd, function (error, stdout, stderr) {
+        console.log(stdout);
     });
 }
