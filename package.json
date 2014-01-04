@@ -8,7 +8,8 @@
     "grunt-wintersmith": "0.0.2",
     "wintersmith-nunjucks": "~0.3.0",
     "grunt": "~0.4.2",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "grunt-contrib-clean": "~0.5.0"
   },
   "dependencies": {
     "optimist": "~0.6.0",

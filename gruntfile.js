@@ -1,6 +1,16 @@
 module.exports = function (grunt) {
     grunt.initConfig({
+        clean: {
+            build: [
+                'build'
+            ]
+        },
         wintersmith: {
+            production: {
+                options: {
+                    config: './config-production.json'
+                }
+            },
             preview: {
                 options: {
                     action: 'preview',
@@ -10,5 +20,6 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-wintersmith');
 };
