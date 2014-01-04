@@ -7,7 +7,7 @@ try {
     var mailSettings = require('./mail-settings.json');
 }
 catch (e) {
-    return new Error("You need to create the file 'mail-settings.json' based on 'mail-settings.sample.json'.");
+    throw new Error("You need to create the file 'mail-settings.json' based on 'mail-settings.sample.json'.");
 }
 
 var fs = require('fs'),

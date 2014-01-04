@@ -5,9 +5,12 @@
     "url": "https://github.com/tylergaw/papersaver.git"
   },
   "dependencies": {
+    "wintersmith": "~2.0.9",
     "wintersmith-nunjucks": "~0.3.0",
     "underscore": "~1.5.2",
-    "optimist": "~0.6.0",
     "mail-listener2": "~0.1.0"
+  },
+  "optionalDependencies": {
+    "optimist": "~0.6.0"
   }
 }
