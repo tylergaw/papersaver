@@ -6,9 +6,13 @@ var config = require('./config'),
 module.exports = Papersaver;
 
 function Papersaver () {
-    this.save = function (img) {
+    this.save = function (img, callback) {
         fs.readFile(img, function (err, data) {
             if (err) throw err;
+
+            if (typeof callback == 'function') {
+                callback();
+            }
 
             var ext = path.extname(img),
                 d = new Date(),
@@ -31,7 +35,7 @@ function Papersaver () {
 }
 
 function buildStatic () {
-    exec('grunt wintersmith:production', function (error, stdout, stderr) {
+    exec('wintersmith build -X', function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
 

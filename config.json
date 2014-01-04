@@ -1,0 +1,11 @@
+{
+    "locals": {
+        "url": "http://lab.tylergaw/papers",
+        "author": "Tyler Gaw",
+        "siteName": "Tyler's crappy drawings from Paper"
+    },
+    "plugins": [
+        "wintersmith-nunjucks",
+        "./plugins/utils.js"
+    ]
+}
