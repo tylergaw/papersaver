@@ -1,6 +1,7 @@
 var config = require('./config'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    exec = require('child_process').exec;
 
 module.exports = Papersaver;
 
@@ -21,14 +22,21 @@ function Papersaver () {
                 .replace('$name', imageName);
 
             fs.mkdir(dir, function () {
-                fs.writeFile(dir + imageName, data, function (err) {
-                    if (err) throw err;
-                });
-
-                fs.writeFile(dir + 'index.md', txt, function (err) {
-                    if (err) throw err;
-                });
+                fs.writeFileSync(dir + imageName, data);
+                fs.writeFileSync(dir + 'index.md', txt);
+                buildStatic();
             });
         });
     };
+}
+
+function buildStatic () {
+    exec('grunt wintersmith:production', function (error, stdout, stderr) {
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+
+        if (error !== null) {
+            console.log('exec error: ' + error);
+        }
+    });
 }
