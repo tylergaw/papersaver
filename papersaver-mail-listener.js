@@ -45,10 +45,9 @@ mailListener.on('mail', function (mail) {
         fs.writeFile(file, att[0].content, function (err) {
             if (err) throw err;
 
-            paperSaver.save(file);
-
-            // Cleanup
-            fs.unlink(file);
+            paperSaver.save(file, function () {
+                fs.unlink(file);
+            });
         });
     }
 });
