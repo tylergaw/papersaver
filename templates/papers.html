@@ -2,7 +2,7 @@
 {% block content %}
 
 <ul class="papers">
-{% set papers = env.helpers.getSortedContentFolder("papers", contents) %}
+{% set papers = env.utils.getSortedContentFolder("papers", contents) %}
 
 {% for paper in papers %}
     <li class="paper">
