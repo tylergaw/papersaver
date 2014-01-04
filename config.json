@@ -7,5 +7,7 @@
     "plugins": [
         "wintersmith-nunjucks",
         "./plugins/utils.js"
-    ]
+    ],
+    "imgSlug": "tylergaw",
+    "metaDataTmpl": "---\ntemplate: paper.html\ndate: $stamp\nimage_path: $name\n---"
 }

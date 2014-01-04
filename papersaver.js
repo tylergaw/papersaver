@@ -1,4 +1,4 @@
-var config = require('./config'),
+var config = require('./config.json'),
     fs = require('fs'),
     path = require('path'),
     exec = require('child_process').exec;
@@ -18,11 +18,11 @@ function Papersaver () {
                 d = new Date(),
                 timestamp = d.getTime(),
                 // TODO: I don't think the hard-coded name here is good.
-                imageName = config.slug + '-paper-' + timestamp + ext,
-                dir = config.papersSlug + timestamp + '/';
+                imageName = config.imgSlug + '-paper-' + timestamp + ext,
+                dir = './contents/papers/' + timestamp + '/';
 
             // TODO: Again this string manipulation feels wrong. Too brittle.
-            var txt = config.fms.replace('$stamp', timestamp)
+            var txt = config.metaDataTmpl.replace('$stamp', timestamp)
                 .replace('$name', imageName);
 
             fs.mkdir(dir, function () {
