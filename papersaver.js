@@ -1,9 +1,16 @@
 var config = require('./config.json'),
+    _ = require('underscore'),
     fs = require('fs'),
     path = require('path'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    metaDataTmpl = './templates/paper-metadata.txt';
 
 module.exports = Papersaver();
+
+// Use mustache-style syntax
+_.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+};
 
 function Papersaver () {
     this.save = function (img, callback) {
@@ -24,14 +31,18 @@ function Papersaver () {
                 imageName = config.imgSlug + '-paper-' + timestamp + ext,
                 dir = './contents/papers/' + timestamp + '/';
 
-            // TODO: Again this string manipulation feels wrong. Too brittle.
-            var txt = config.metaDataTmpl.replace('$stamp', timestamp)
-                .replace('$name', imageName);
-
             fs.mkdir(dir, function () {
                 fs.writeFileSync(dir + imageName, data);
-                fs.writeFileSync(dir + 'index.md', txt);
-                buildStatic();
+
+                fs.readFile(metaDataTmpl, 'utf8', function (err, tmplStr) {
+                    var metaData = _.template(tmplStr, {
+                        'date': timestamp,
+                        'imagePath': imageName
+                    });
+
+                    fs.writeFileSync(dir + 'index.md', metaData);
+                    buildStatic();
+                });
             });
         });
     };

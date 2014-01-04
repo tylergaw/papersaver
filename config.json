@@ -11,6 +11,5 @@
     "ignore": [
         "**/.DS_Store"
     ],
-    "imgSlug": "tylergaw",
-    "metaDataTmpl": "---\ntemplate: paper.html\ndate: $stamp\nimage_path: $name\n---"
+    "imgSlug": "tylergaw"
 }

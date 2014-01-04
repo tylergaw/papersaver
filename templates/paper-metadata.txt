@@ -1,0 +1,5 @@
+---
+template: paper.html
+date: {{ date }}
+image_path: {{ imagePath }}
+---
