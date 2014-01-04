@@ -1,3 +1,8 @@
+// This needs to be left running to work properly.
+// There are a lot of different ways to do that. I'm using Forever inside of
+// Screen. Not sure if Forever is quite necessary, but it's working. You could
+// just node script.js in a screen and it would likely be fine.
+
 try {
     var mailSettings = require('./mail-settings.json');
 }
