@@ -7,14 +7,12 @@ try {
     var mailSettings = require('./mail-settings.json');
 }
 catch (e) {
-    console.log("You need to create the file 'mail-settings.json' based on 'mail-settings.sample.json'.");
-    return false;
+    return new Error("You need to create the file 'mail-settings.json' based on 'mail-settings.sample.json'.");
 }
 
 var fs = require('fs'),
     MailListener = require('mail-listener2'),
-    Papersaver = require('./papersaver'),
-    paperSaver = new Papersaver();
+    savePaper = require('./papersaver').save;
 
 var mailListener = new MailListener({
     username: mailSettings.username,
@@ -50,7 +48,7 @@ mailListener.on('mail', function (mail) {
         fs.writeFile(file, att[0].content, function (err) {
             if (err) throw err;
 
-            paperSaver.save(file, function () {
+            savePaper(file, function () {
                 fs.unlink(file);
             });
         });
