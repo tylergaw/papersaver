@@ -32,4 +32,4 @@ of all the images. Also for fun.
 
  - Learned how to use [Wintersmith](https://github.com/jnordberg/wintersmith) to generate static sites.
  - Learned the basics of [Grunt](http://gruntjs.com/) and used it to watch/compile Sass to CSS.
- - Leanred how to use npm's `--save` and ``--save-dev` to keep `package.json` tidy.
+ - Leanred how to use npm's `--save`, `--save-optional`, and ``--save-dev` to keep `package.json` tidy.

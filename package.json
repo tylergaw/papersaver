@@ -7,11 +7,12 @@
   "dependencies": {
     "wintersmith": "~2.0.9",
     "wintersmith-nunjucks": "~0.3.0",
-    "underscore": "~1.5.2",
-    "mail-listener2": "~0.1.0"
+    "underscore": "~1.5.2"
   },
   "optionalDependencies": {
-    "optimist": "~0.6.0"
+    "optimist": "~0.6.0",
+    "mail-listener2": "~0.1.0",
+    "forever": "~0.10.11"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
