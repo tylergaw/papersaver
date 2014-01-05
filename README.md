@@ -52,8 +52,10 @@ Before anything you'll need to go through the rigamoral of making sure Node is
 setup correctly. Papersaver was built using node 0.10.24.
 
  1. Clone the repo, navigate to the papersaver directory
- 2. Install node dependencies: `npm install` That will install all the dependencies,
- optional, and dev dependencies.
+ 2. Install node dependencies: `(sudo) npm install` That will install all the dependencies,
+ optional, and dev dependencies. NOTE: The wintersmith and forever packages will
+ be installed globally. This was due to some fishiness I ran into with their
+ commands not being recognized on the $PATH or...whatever.
  3. You should be able to preview the site now with Wintersmith's preview server:
  `wintersmith preview`.
  If everything is in place go to `http://localhost:8080/papers/` to see it.
