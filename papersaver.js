@@ -44,7 +44,10 @@ function Papersaver () {
                     fs.writeFileSync(dir + 'index.md', metaData);
 
                     buildStatic();
-                    updateGitRepo();
+
+                    if (parseInt(process.env['gitUpdateOnSave'], 10)) {
+                        updateGitRepo();
+                    }
                 });
             });
         });
