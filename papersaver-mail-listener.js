@@ -12,7 +12,8 @@ catch (e) {
 
 var fs = require('fs'),
     MailListener = require('mail-listener2'),
-    savePaper = require('./papersaver').save;
+    savePaper = require('./papersaver').save,
+    _ = require('underscore');
 
 var mailListener = new MailListener({
     username: mailSettings.username,
@@ -40,8 +41,16 @@ mailListener.on('error', function (err) {
 mailListener.on('mail', function (mail) {
     console.log('Mail received');
 
-    var att = mail.attachments;
+    if (mailSettings.whitelist) {
+        var allowedFrom = (_.indexOf(mailSettings.whitelist, mail.from[0].address) > -1);
 
+        if (!allowedFrom) {
+            console.log('Mail was sent from an address that is not in your whitelist. Aborting');
+            return false;
+        }
+    }
+
+    var att = mail.attachments || [];
     if (att.length) {
         var file = att[0].fileName;
 
@@ -52,5 +61,9 @@ mailListener.on('mail', function (mail) {
                 fs.unlink(file);
             });
         });
+    }
+    else {
+        console.log('No attachment. Aborting.');
+        return false;
     }
 });

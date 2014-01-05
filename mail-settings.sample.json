@@ -1,5 +1,10 @@
 {
     "username": "username@gmail.com",
     "password": "password1234",
-    "host": "imap.gmail.com"
+    "host": "imap.gmail.com",
+    "whitelist": [
+        "emails@domain.com",
+        "allowed@domain.com",
+        "tosendpapers@domain.com"
+    ]
 }
