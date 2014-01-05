@@ -1,13 +1,22 @@
 var _ = require('underscore');
 
 module.exports = function (env, callback) {
-    env.utils.getSortedContentFolder = function (folder, contents) {
-        return _.chain(contents[folder]._.directories)
+    env.utils.getSortedPaperDirs = function (contents) {
+        return _.chain(contents._.directories)
             .map(function (item) {
-                return item.index;
+                if (item) {
+                    return item.index;
+                }
             })
             .sortBy(function (item) {
-                return -item.date;
+                if (item) {
+                    return -item.date;
+                }
+            })
+            .filter(function (item) {
+                if (item) {
+                    return item;
+                }
             })
             .value();
     };

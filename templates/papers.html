@@ -1,9 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-
 <ul class="papers">
-{% set papers = env.utils.getSortedContentFolder("papers", contents) %}
-
+{% set papers = env.utils.getSortedPaperDirs(contents) %}
 {% for paper in papers %}
     <li class="paper">
         <a href="{{ paper.url }}">
@@ -13,5 +11,4 @@
     </li>
 {% endfor %}
 </ul>
-
 {% endblock %}
