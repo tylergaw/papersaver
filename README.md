@@ -33,3 +33,30 @@ of all the images. Also for fun.
  - Learned how to use [Wintersmith](https://github.com/jnordberg/wintersmith) to generate static sites.
  - Learned the basics of [Grunt](http://gruntjs.com/) and used it to watch/compile Sass to CSS.
  - Leanred how to use npm's `--save`, `--save-optional`, and ``--save-dev` to keep `package.json` tidy.
+
+### Setup and usage
+
+Before anything you'll need to go through the rigamoral of making sure Node is
+setup correctly. Papersaver was built using node 0.10.24.
+
+ 1. Clone the repo, navigate to the papersaver directory
+ 2. Install node dependencies: `npm install` That will install all the dependencies,
+ optional, and dev dependencies.
+ 3. You should be able to preview the site now with Wintersmith's preview server: `wintersmith preview`.
+ If everything is in place go to `http://localhost:8080/papers/` to see it.
+ 4. Are you working on the CSS? Run `grunt watch`. That will look for any changes to `sass` files
+ and recompile them to `css` files.
+ 5. All good? Let's head on to flavor country.
+
+#### Usage
+
+ 1. Adding a new Paper from a local file using papersaver-cli:
+    - `node papersaver-cli.js -i /path/to/local/image.jpg -g false`. The `-g false`
+    will keep Papersaver from adding, committing, and pushing the new files to the Git repo.
+    - If there are no errors, refresh the page. You should see the `/path/to/local/image.jpg`
+    - That command created the new files and built the static site with `wintersmith build -X`.
+    Don't believe me? Check the contents of `/papersaver/build`. See the numbered directory? That's
+    the Paper just added. Run that same command again and you'll get another one. Boosh! Computers!
+    - The CLI can be used as the only method of adding new Papers, but let's look at another,
+    more automated way of doing so.
+ 2. Adding new Papers via email:
