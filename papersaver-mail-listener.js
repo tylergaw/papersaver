@@ -1,3 +1,19 @@
+#!/usr/bin/env node
+try {
+    var argv = require('optimist')
+        .usage('Listens for new emails in mail-settings.json.\nUsage: $0')
+        .alias('g', 'git')
+        .describe('g', 'Add new files, commit, and push to Git repo when saving a new Paper.')
+        .default('g', true)
+        .boolean('g')
+        .argv;
+}
+catch (e) {
+    throw new Error('Papersaver cli requires the package "optimist". To install: npm install optimist');
+}
+
+process.env['gitUpdateOnSave'] = (argv.git) ? 1 : 0;
+
 // This needs to be left running to work properly.
 // There are a lot of different ways to do that. I'm using Forever inside of
 // Screen. Not sure if Forever is quite necessary, but it's working. You could
