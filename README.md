@@ -2,12 +2,12 @@
 
 Self hosting for drawings from [Paper](http://www.fiftythree.com/paper)
 
-### How do I use this?
+### How am I using this?
 
  1. Draw rad or not-so-rad things in the [Paper](http://www.fiftythree.com/paper)
  app on my iPad
  2. Email those images to a dedicated Gmail address I created just for this
- 3. I have a NodeJS script running on my server that listens for new email to
+ 3. I have a Node script running on my server that listens for new email to
  that address
  4. When I new email is received, the script grabs the image attachment and hands
  it off to Papersaver.js
@@ -122,3 +122,26 @@ sketches to a specified email address and they'll then be saved with Papersaver.
 
 If the Paper didn't show up, double check that your `fromWhitelist` and `toWhitelist`
 settings match the email address you sent the page from and to.
+
+#### Serving the static site
+
+In the usage examples, I was looking at the Wintersmith preview site. That's not
+the actual site that will be shown. Here's how I'm hosting the built site.
+
+ 1. I'm running an Nginx on Rackspace VPS.
+ 2. Every setup is going to be a little different, but the main thing I'm doing
+ is using an Nginx server conf to set the `build` directory as the webroot of
+ `http://lab.tylergaw.com/papers/`.
+
+Here's a truncated version of the conf
+
+    server {
+      listen 80;
+      server_name lab.tylergaw.com;
+      ...
+      location /papers {
+        alias /path/to/public/files/papersaver/build/papers/;
+      }
+      ...
+    }
+
