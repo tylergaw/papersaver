@@ -34,7 +34,7 @@ of all the images. Also for fun.
  - Learned the basics of [Grunt](http://gruntjs.com/) and used it to watch/compile Sass to CSS.
  - Leanred how to use npm's `--save`, `--save-optional`, and ``--save-dev` to keep `package.json` tidy.
 
-### Setup and usage
+### Setup
 
 Before anything you'll need to go through the rigamoral of making sure Node is
 setup correctly. Papersaver was built using node 0.10.24.
@@ -48,15 +48,27 @@ setup correctly. Papersaver was built using node 0.10.24.
  and recompile them to `css` files.
  5. All good? Let's head on to flavor country.
 
-#### Usage
+### Usage
 
- 1. Adding a new Paper from a local file using papersaver-cli:
-    - `node papersaver-cli.js -i /path/to/local/image.jpg -g false`. The `-g false`
-    will keep Papersaver from adding, committing, and pushing the new files to the Git repo.
-    - If there are no errors, refresh the page. You should see the `/path/to/local/image.jpg`
-    - That command created the new files and built the static site with `wintersmith build -X`.
-    Don't believe me? Check the contents of `/papersaver/build`. See the numbered directory? That's
-    the Paper just added. Run that same command again and you'll get another one. Boosh! Computers!
-    - The CLI can be used as the only method of adding new Papers, but let's look at another,
-    more automated way of doing so.
- 2. Adding new Papers via email:
+#### Adding new Papers via papersaver-cli
+
+ - `node papersaver-cli.js -i /path/to/local/image.jpg -g false`. The `-g false`
+ will keep Papersaver from adding, committing, and pushing the new files to the Git repo.
+ - If there are no errors, refresh the page. You should see the `/path/to/local/image.jpg`
+ - That command created the new files and built the static site with `wintersmith build -X`.
+ Don't believe me? Check the contents of `/papersaver/build`. See the numbered directory? That's
+ the Paper just added. Run that same command again and you'll get another one. Boosh! Computers!
+ - The CLI can be used as the only method of adding new Papers, but let's look at another,
+ more automated way of doing so.
+
+#### Adding new Papers via email
+
+Paper (the app) allows you to email sketches. We're going to send
+sketches to a specified email address and they'll then be saved with Papersaver.
+
+ - Highly recommended step 1: Create a new email address that will only be used for this.
+ You'll be accessing this account programmatically over IMAP, while your server
+ should be set up in a secure way,
+ there's always a chance that the account could be compromised. It
+ only takes a few minutes to set up a new, dedicated Gmail–or other free account.
+ - On your new email account (you made one right?) Enable IMAP.
