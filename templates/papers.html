@@ -2,6 +2,7 @@
 {% block content %}
 <ul class="papers">
 {% set papers = env.utils.getSortedPaperDirs(contents) %}
+
 {% for paper in papers %}
     <li class="paper">
         <a href="{{ paper.url }}">
@@ -10,5 +11,12 @@
         </a>
     </li>
 {% endfor %}
+
+{% if papers.length == 0 %}
+    <li class="no-papers">
+        No Papers kid. Go draw something.
+    </li>
+{% endif %}
+
 </ul>
 {% endblock %}
