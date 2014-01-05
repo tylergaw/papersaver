@@ -41,11 +41,20 @@ mailListener.on('error', function (err) {
 mailListener.on('mail', function (mail) {
     console.log('Mail received');
 
-    if (mailSettings.whitelist) {
-        var allowedFrom = (_.indexOf(mailSettings.whitelist, mail.from[0].address) > -1);
+    if (mailSettings.fromWhitelist) {
+        var allowedFrom = (_.indexOf(mailSettings.fromWhitelist, mail.from[0].address) > -1);
 
         if (!allowedFrom) {
-            console.log('Mail was sent from an address that is not in your whitelist. Aborting');
+            console.log('Mail was sent from an address that is not in your from whitelist. Aborting');
+            return false;
+        }
+    }
+
+    if (mailSettings.toWhitelist) {
+        var allowedTo = (_.indexOf(mailSettings.toWhitelist, mail.to[0].address) > -1);
+
+        if (!allowedTo) {
+            console.log('Mail was sent to an address that is not in your to whitelist. Aborting');
             return false;
         }
     }
