@@ -4,7 +4,7 @@ var config = require('./config.json'),
     path = require('path'),
     exec = require('child_process').exec,
     metaDataTmpl = './templates/paper-metadata.txt',
-    papersDir = './contents/papers/';
+    papersDir = './contents/';
 
 module.exports = Papersaver();
 
