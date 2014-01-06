@@ -14,7 +14,7 @@ body {
         display: block;
         height: $size;
         left: -$size / 2;
-        position: absolute;
+        position: fixed;
         top: -$size / 2;
         width: $size;
     }

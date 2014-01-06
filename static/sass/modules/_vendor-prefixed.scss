@@ -1,0 +1,19 @@
+// These is our own homebrewed css3 mixins. Using Compass's CSS3 module is not
+// recommended since still uses a bunch of uneeded vendor prefixes.
+//
+// Needed vendor prefixes based off of info found at http://caniuse.com
+@mixin box-sizing ($val) {
+    -moz-box-sizing: $val;
+    box-sizing: $val;
+}
+
+@mixin transition ($val...) {
+    -webkit-transition: $val;
+    transition: $val;
+}
+
+@mixin transform ($val...) {
+    -ms-transform: $val;
+    -webkit-transform: $val;
+    transform: $val;
+}

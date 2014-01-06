@@ -7,7 +7,7 @@
     <li class="paper">
         <a href="{{ paper.url }}">
             <img src="{{ paper.url }}{{ paper.metadata.image_path }}" alt="">
-            <h3>{{ paper.date }}</h3>
+            <time class="paper-published" datetime="{{ paper.date }}">{{ paper.date }}</time>
         </a>
     </li>
 {% endfor %}

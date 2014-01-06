@@ -1,8 +1,47 @@
-.papers {
+.papers,
+.paper-single {
+    @include box-sizing(border-box);
     font-weight: 200;
     text-align: center;
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 2.5em 0 1em 0;
+    width: 95%;
+}
+
+.paper-single {
+    max-width: 1000px;
+}
+
+.paper {
+    padding-bottom: 1.5em;
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    &:hover {
+        .paper-published {
+            color: #f2f2f2;
+        }
+    }
+}
+
+.paper-published {
+    background-color: darken(#1c2326, 6);
+    color: rgba(#f2f2f2, 0.7);
+    display: block;
+    font-size: 0.75em;
+    padding: 0.3em 0.4em 0.4em 0.4em;
+    text-align: left;
 }
 
 .no-papers {
-    padding-top: 4em;
+    padding-top: 5em;
 }

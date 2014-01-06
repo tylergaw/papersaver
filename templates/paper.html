@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-<img src="{{ page.url }}{{ page.metadata.image_path }}" alt="">
+<div class="paper paper-single">
+    <img src="{{ page.url }}{{ page.metadata.image_path }}" alt="">
+    <time class="paper-published" datetime="{{ page.date }}">{{ page.date }}</time>
+</div>
 {% endblock %}

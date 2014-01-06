@@ -1,4 +1,4 @@
-@mixin rotateAnim {
+@-webkit-keyframes orbit {
     50% {
         -webkit-transform: rotate(180deg);
     }
@@ -8,12 +8,14 @@
     }
 }
 
-@-webkit-keyframes orbit {
-    @include rotateAnim;
-}
-
 @keyframes orbit {
-    @include rotateAnim;
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
 }
 
 .mark {

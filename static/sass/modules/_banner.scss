@@ -1,5 +1,8 @@
 [role="banner"] {
+    @include box-sizing(border-box);
     overflow: hidden;
     padding: 0.6em 0.6em;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
