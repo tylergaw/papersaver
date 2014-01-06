@@ -1,0 +1,60 @@
+@mixin rotateAnim {
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes orbit {
+    @include rotateAnim;
+}
+
+@keyframes orbit {
+    @include rotateAnim;
+}
+
+.mark {
+    display: inline-block;
+    float: left;
+    font-size: 1.2em;
+    font-weight: 700;
+
+    a {
+        $size: 1.1em;
+        border: 1px solid #fff;
+        border-radius: $size;
+        color: #fff;
+        display: inline-block;
+        height: $size;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        width: $size;
+
+        &:after {
+            border-radius: $size;
+            content: "•";
+            display: inline-block;
+            font-weight: 200;
+            height: $size;
+            left: 0;
+            position: absolute;
+            text-align: left;
+            text-indent: -4px;
+            top: 0;
+            width: $size;
+        }
+
+        &:hover,
+        &:focus {
+            &:after {
+                $duration: 0.5s;
+                -webkit-animation: orbit $duration linear infinite;
+                animation: orbit $duration linear infinite;
+            }
+        }
+    }
+}

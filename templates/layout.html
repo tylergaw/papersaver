@@ -4,9 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tyler Gaw - Papersaver</title>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo+2:200,400,700">
         <link rel="stylesheet" href="/papers/static/css/papers.css">
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <header role="banner">
+            <h1 class="mark">
+                <a href="./">P</a>
+            </h1>
+            <div role="contentinfo">
+                <a href="https://github.com/tylergaw/papersaver">Info</a> •
+                <a href="https://github.com/tylergaw/papersaver">Source</a>
+            </div>
+        </header>
+        <div role="main">
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>
