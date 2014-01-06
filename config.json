@@ -3,7 +3,8 @@
     "locals": {
         "url": "http://lab.tylergaw.com/papers",
         "author": "Tyler Gaw",
-        "siteName": "Tyler's crappy drawings from Paper"
+        "siteName": "Tyler's crappy drawings from Paper",
+        "timezoneOffset": "-0500"
     },
     "plugins": [
         "wintersmith-nunjucks",

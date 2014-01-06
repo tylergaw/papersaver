@@ -8,7 +8,7 @@
         <a href="{{ paper.url }}">
             <img src="{{ paper.url }}{{ paper.metadata.image_path }}" alt="">
             <time class="paper-published" datetime="{{ paper.date }}">
-                {{ env.utils.getDateFormatted(paper.date) }}
+                {{ env.utils.getDateFormatted(paper.date, timezoneOffset) }}
             </time>
         </a>
     </li>

@@ -22,8 +22,14 @@ module.exports = function (env, callback) {
             .value();
     };
 
-    env.utils.getDateFormatted = function (date) {
-        return moment(date).format('MMMM Do YYYY [at] h:mma');
+    env.utils.getDateFormatted = function (date, offset) {
+        var m = moment(date);
+
+        if (offset) {
+            m = m.zone(offset);
+        }
+
+        return m.format('MMMM Do YYYY [at] h:mma');
     };
 
     callback();

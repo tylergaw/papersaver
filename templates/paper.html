@@ -3,7 +3,7 @@
 <div class="paper paper-single">
     <img src="{{ page.url }}{{ page.metadata.image_path }}" alt="">
     <time class="paper-published" datetime="{{ page.date }}">
-        {{ env.utils.getDateFormatted(page.date) }}
+        {{ env.utils.getDateFormatted(page.date, timezoneOffset) }}
     </time>
 </div>
 {% endblock %}
