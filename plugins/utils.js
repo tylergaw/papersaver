@@ -1,4 +1,5 @@
-var _ = require('underscore');
+var _ = require('underscore'),
+    moment = require('moment');
 
 module.exports = function (env, callback) {
     env.utils.getSortedPaperDirs = function (contents) {
@@ -19,6 +20,10 @@ module.exports = function (env, callback) {
                 }
             })
             .value();
+    };
+
+    env.utils.getDateFormatted = function (date) {
+        return moment(date).format('MMMM Do YYYY [at] h:mma');
     };
 
     callback();

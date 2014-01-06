@@ -2,6 +2,8 @@
 {% block content %}
 <div class="paper paper-single">
     <img src="{{ page.url }}{{ page.metadata.image_path }}" alt="">
-    <time class="paper-published" datetime="{{ page.date }}">{{ page.date }}</time>
+    <time class="paper-published" datetime="{{ page.date }}">
+        {{ env.utils.getDateFormatted(page.date) }}
+    </time>
 </div>
 {% endblock %}
