@@ -57,6 +57,7 @@ setup correctly. Papersaver was built using node 0.10.24.
  be installed globally. This was due to some fishiness I ran into with their
  commands not being recognized on the $PATH or...whatever.
  *(This is not working for me so I just manually installed forever and wintersmith globally)*
+ 2a. `(sudo) npm install -g forever wintersmith`
  3. You should be able to preview the site now with Wintersmith's preview server:
  `wintersmith preview`.
  If everything is in place go to `http://localhost:8080/papers/` to see it.
