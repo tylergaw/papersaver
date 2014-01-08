@@ -4,23 +4,23 @@
     font-weight: 200;
     text-align: center;
     margin: 0 auto;
-    max-width: 768px;
-    padding: 2.5em 0 1em 0;
+    overflow: hidden;
+    padding: 2.8em 0 1em 0;
     width: 95%;
 }
 
 .paper-single {
-    max-width: 1000px;
+    max-width: 950px;
 }
 
-@media screen and (min-width: 1200px) and (min-height: 790px) {
-    .papers,
+@media screen and (min-width: 1400px) and (min-height: 860px) {
     .paper-single {
-        max-width: 1024px;
+        max-width: 1156px;
     }
 }
 
 .paper {
+    @include box-sizing(border-box);
     padding-bottom: 1.5em;
 
     a {
@@ -36,6 +36,52 @@
     &:hover {
         .paper-published {
             color: #f2f2f2;
+        }
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .papers .paper {
+        padding-bottom: 1em;
+        float: left;
+        margin-right: 3.5%;
+        width: 48%;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 880px) {
+    .papers .paper {
+        $margin: 3%;
+        margin-right: $margin;
+        width: 31.333%;
+
+        &:nth-child(2n) {
+            margin-right: $margin;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .papers .paper {
+        $margin: 2%;
+        margin-right: $margin;
+        width: 23.5%;
+
+        &:nth-child(2n),
+        &:nth-child(3n) {
+            margin-right: $margin;
+        }
+
+        &:nth-child(4n) {
+            margin-right: 0;
         }
     }
 }
