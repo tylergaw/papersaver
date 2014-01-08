@@ -54,6 +54,10 @@
 }
 
 @media screen and (min-width: 880px) {
+    .papers {
+        width: 98%;
+    }
+
     .papers .paper {
         $margin: 3%;
         margin-right: $margin;
@@ -69,7 +73,7 @@
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1150px) {
     .papers .paper {
         $margin: 2%;
         margin-right: $margin;
