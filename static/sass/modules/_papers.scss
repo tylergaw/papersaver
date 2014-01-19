@@ -9,11 +9,47 @@
     width: 95%;
 }
 
+.paper-container img,
 .paper-single {
     max-width: 940px;
 }
 
+.paper-container {
+    background-color: rgba(#000, 0.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+
+    &.hidden {
+        display: none;
+    }
+
+    .close-btn {
+        background-color: transparent;
+        border: 0;
+        color: #fdfdfd;
+        cursor: pointer;
+        font-size: 1.6em;
+        font-weight: 700;
+        position: absolute;
+        right: 0.25em;
+        top: 0.1em;
+        z-index: 2;
+    }
+
+    img {
+        border-radius: 3px;
+        display: block;
+        margin: 2.4em auto 0 auto;
+        width: 98%;
+    }
+}
+
 @media screen and (min-width: 1400px) and (min-height: 860px) {
+    .paper-container img,
     .paper-single {
         max-width: 1156px;
     }
@@ -22,6 +58,7 @@
 .paper {
     @include box-sizing(border-box);
     padding-bottom: 1em;
+    @include transition(opacity 0.1s);
 
     a {
         display: block;
@@ -32,6 +69,10 @@
         border-radius: 3px;
         display: block;
         width: 100%;
+    }
+
+    &.open {
+        opacity: 0.1;
     }
 }
 
