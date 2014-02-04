@@ -46,6 +46,10 @@ of all the images. Also for fun.
  - Leanred how to use npm's `--save`, `--save-optional`, and ``--save-dev` to keep
  `package.json` tidy.
 
+### What was I drinking?
+
+Red wine. A whole lot of red wine.
+
 ### Setup
 
 Before anything you'll need to go through the rigamoral of making sure Node is
