@@ -1,7 +1,7 @@
 {
     "baseUrl": "/papers/",
     "locals": {
-        "url": "http://lab.tylergaw.com/papers",
+        "url": "https://lab.tylergaw.com/papers",
         "author": "Tyler Gaw",
         "siteName": "Tyler's crappy drawings from Paper",
         "timezoneOffset": "-0500"

@@ -139,7 +139,7 @@ the actual site that will be shown. Here's how I'm hosting the built site.
  1. I'm running an Nginx on Rackspace VPS.
  2. Every setup is going to be a little different, but the main thing I'm doing
  is using an Nginx server conf to set the `build` directory as the webroot of
- `http://lab.tylergaw.com/papers/`.
+ `https://lab.tylergaw.com/papers/`.
 
 Here's a truncated version of the conf
 
@@ -152,4 +152,3 @@ Here's a truncated version of the conf
       }
       ...
     }
-
